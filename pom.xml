@@ -9,9 +9,16 @@
 
   <name>engenharia-back</name>
   <url>http://maven.apache.org</url>
+  
+  <description>Backend do app de Engenharia de Software II</description>
+  <organization>
+  	<name>Feevale</name>
+  	<url>http://feevale.br</url>
+  </organization>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <java.version>1.8</java.version>
   </properties>
 
   <dependencies>
@@ -22,4 +29,5 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+  
 </project>
