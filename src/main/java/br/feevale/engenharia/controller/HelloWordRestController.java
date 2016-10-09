@@ -1,6 +1,10 @@
 package br.feevale.engenharia.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -11,7 +15,7 @@ import br.feevale.engenharia.model.Aluno;
 import br.feevale.engenharia.service.AlunoService;
 
 @RestController
-@RequestMapping(value = "hello")
+@RequestMapping(value = "usuario")
 public class HelloWordRestController {
 	
 	@Autowired
@@ -21,13 +25,29 @@ public class HelloWordRestController {
 	private AlunoService service;
 
 	@ResponseBody
-	@RequestMapping(value = "/word", method = RequestMethod.GET)
-	public String helloWord(){
+	@RequestMapping
+	public List<Aluno> hello() {
+//		return service.findAll();
+		novo();
+		return new ArrayList<>();
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/novo", method = RequestMethod.GET)
+	public String novo(){
 		Aluno aluno = new Aluno();
-		aluno.setIdAluno(2L);
-		aluno.setNome("teste");
+		aluno.setNome("teste2");
 		service.save(aluno);
 		return config.teste();
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/atualiza/{nome}", method = RequestMethod.GET)
+	public void atualiza(@PathVariable("nome") String nome){
+		Aluno aluno = new Aluno();
+		aluno.setIdAluno(1L);
+		aluno.setNome(nome);
+		service.save(aluno);
 	}
 	
 }
