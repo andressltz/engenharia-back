@@ -1,6 +1,5 @@
 package br.feevale.engenharia.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,9 +26,7 @@ public class HelloWordRestController {
 	@ResponseBody
 	@RequestMapping
 	public List<Aluno> hello() {
-//		return service.findAll();
-		novo();
-		return new ArrayList<>();
+		return service.findAll();
 	}
 	
 	@ResponseBody
@@ -48,6 +45,12 @@ public class HelloWordRestController {
 		aluno = service.findById(7L);
 		aluno.setNome(nome);
 		service.save(aluno);
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/exclui/{idAluno}", method = RequestMethod.GET)
+	public void exclui(@PathVariable("idAluno")Long idAluno) {
+		service.delete(idAluno);
 	}
 	
 }
