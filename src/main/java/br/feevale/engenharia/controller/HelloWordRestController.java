@@ -45,7 +45,7 @@ public class HelloWordRestController {
 	@RequestMapping(value = "/atualiza/{nome}", method = RequestMethod.GET)
 	public void atualiza(@PathVariable("nome") String nome){
 		Aluno aluno = new Aluno();
-		aluno.setIdAluno(1L);
+		aluno = service.findById(7L);
 		aluno.setNome(nome);
 		service.save(aluno);
 	}

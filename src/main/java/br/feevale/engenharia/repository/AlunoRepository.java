@@ -1,16 +1,13 @@
 package br.feevale.engenharia.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Component;
 
 import br.feevale.engenharia.model.Aluno;
 
 /**
  * References: http://docs.spring.io/spring-data/jpa/docs/current/reference/html/#repositories.core-concepts 
  */
-@Component
+//@Component
 public interface AlunoRepository extends JpaRepository<Aluno, Long>{
 
 //	@Query(value = "INSERT INTO aluno (nome) VALUES (:nome)", nativeQuery = true)

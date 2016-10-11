@@ -2,7 +2,6 @@ package br.feevale.engenharia.model;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,17 +15,16 @@ public class Aluno implements Serializable, Persistable<Long> {
 
 	@Id
 	@GeneratedValue
-	@Column(name = "idAluno")
-	private Long idAluno;
+	private Long idaluno;
 	
 	private String nome;
 
-	public Long getIdAluno() {
-		return idAluno;
+	public Long getIdaluno() {
+		return idaluno;
 	}
 
-	public void setIdAluno(Long idAluno) {
-		this.idAluno = idAluno;
+	public void setIdaluno(Long idaluno) {
+		this.idaluno = idaluno;
 	}
 
 	public String getNome() {
@@ -39,7 +37,7 @@ public class Aluno implements Serializable, Persistable<Long> {
 
 	@Override
 	public Long getId() {
-		return idAluno;
+		return idaluno;
 	}
 
 	@Override

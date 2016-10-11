@@ -1,6 +1,5 @@
 package br.feevale.engenharia.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,27 +15,19 @@ public class AlunoService {
 	private AlunoRepository repository;
 	
 	public void save(Aluno model){
-		if (model.isNew()) {
-			repository.flush();
-//			repository.save(model.getNome());
-			repository.save(model);
-		} else {
-//			update(model);
-			repository.save(model);
-		}
+			repository.saveAndFlush(model);
 	}
 	
-	public void update(Aluno model) { 
-//		return repository.update(model.getNome(), model.getIdAluno());
+	public Aluno findById(Long id){
+		return repository.findOne(id);
 	}
 	
 	public void delete(Long idAluno) {
-		
+		repository.delete(idAluno);
 	}
 	
 	public List<Aluno> findAll() {
-//		return repository.findAll();
-		return new ArrayList<>();
+		return repository.findAll();
 	}
 	
 }
