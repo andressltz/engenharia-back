@@ -13,8 +13,8 @@ import br.feevale.engenharia.model.Aluno;
 @Component
 public interface AlunoRepository extends JpaRepository<Aluno, Long>{
 
-	@Query(value = "INSERT INTO aluno (nome) VALUES (:nome)", nativeQuery = true)
-	Aluno save(@Param("nome")String nome);
+//	@Query(value = "INSERT INTO aluno (nome) VALUES (:nome)", nativeQuery = true)
+//	Aluno save(@Param("nome")String nome);
 	
 //	@Modifying
 //	@Query(value = "UPDATE aluno SET nome = :nome WHERE idAluno = :idAluno", nativeQuery = true)

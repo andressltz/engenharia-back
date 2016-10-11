@@ -18,10 +18,11 @@ public class AlunoService {
 	public void save(Aluno model){
 		if (model.isNew()) {
 			repository.flush();
-			repository.save(model.getNome());
-//			repository.save(model);
+//			repository.save(model.getNome());
+			repository.save(model);
 		} else {
-			update(model);
+//			update(model);
+			repository.save(model);
 		}
 	}
 	

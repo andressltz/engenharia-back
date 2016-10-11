@@ -16,7 +16,7 @@ public class Aluno implements Serializable, Persistable<Long> {
 
 	@Id
 	@GeneratedValue
-//	@Column(name = "idAluno")
+	@Column(name = "idAluno")
 	private Long idAluno;
 	
 	private String nome;
