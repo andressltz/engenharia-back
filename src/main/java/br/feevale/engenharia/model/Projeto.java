@@ -1,6 +1,7 @@
 package br.feevale.engenharia.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -53,7 +54,13 @@ public class Projeto implements Serializable, Persistable<Long> {
 	
 	private String justificativacontinuacao;
 	
-
+	private List<Cronograma> cronogramas;
+	
+//	private Situacao situacao;
+//	pprivate Classificacao classificacao;
+//	private DimensaoInstitucional dimensaoInstitucional;
+	
+	
 	public Long getIdprojeto() {
 		return idprojeto;
 	}
@@ -204,6 +211,15 @@ public class Projeto implements Serializable, Persistable<Long> {
 
 	public void setJustificativacontinuacao(String justificativacontinuacao) {
 		this.justificativacontinuacao = justificativacontinuacao;
+	}
+	
+
+	public List<Cronograma> getCronogramas() {
+		return cronogramas;
+	}
+
+	public void setCronogramas(List<Cronograma> cronogramas) {
+		this.cronogramas = cronogramas;
 	}
 
 	public static long getSerialversionuid() {
