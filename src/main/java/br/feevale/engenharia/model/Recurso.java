@@ -19,9 +19,8 @@ public class Recurso implements Serializable, Persistable<Long> {
 	
 	@JoinColumn
 	private Projeto projeto;
-	
 	private String txdescricao;
-	
+	private Integer quantidade;
 
 	
 	public Long getIdrecurso() {
@@ -46,6 +45,15 @@ public class Recurso implements Serializable, Persistable<Long> {
 
 	public void setTxdescricao(String txdescricao) {
 		this.txdescricao = txdescricao;
+	}
+
+	
+	public Integer getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
 	}
 
 	@Override
