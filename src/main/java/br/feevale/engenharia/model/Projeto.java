@@ -17,51 +17,32 @@ public class Projeto implements Serializable, Persistable<Long> {
 	@Id
 	@GeneratedValue
 	private Long idprojeto;
-	
 	private String nome;
-	
 	private String titulo;
-
 	private String proponente;
-	
 	private String justificativa;
-	
 	private String objetivosgerais;
-	
 	private String objetivosespecificos;
-	
 	private String inicio;
-	
 	private String termino;
-	
 	private String identificador;
-	
-	private String situacao;
-	
-	private String classificacao;
-	
-	private String dimensaoinstitucional;
-	
 	private String proposta;
-	
 	private String resultados;
-	
-	private String cronograma;
-	
-	private String publicalvo;
-	
 	private String avaliacao;
 	
+	private List<PublicoAlvo> publicoalvo;
 	private String justificativacontinuacao;
-	
 	private List<Cronograma> cronogramas;
+	private List<Recurso> recursos;
+	private List<Participante> participantes;
+	private List<PublicoAtendido> publicoatendido;
 	
 //	private Situacao situacao;
 //	pprivate Classificacao classificacao;
 //	private DimensaoInstitucional dimensaoInstitucional;
 	
-	
-	public Long getIdprojeto() {
+	@Override
+	public Long getId() {
 		return idprojeto;
 	}
 
@@ -141,30 +122,6 @@ public class Projeto implements Serializable, Persistable<Long> {
 		this.identificador = identificador;
 	}
 
-	public String getSituacao() {
-		return situacao;
-	}
-
-	public void setSituacao(String situacao) {
-		this.situacao = situacao;
-	}
-
-	public String getClassificacao() {
-		return classificacao;
-	}
-
-	public void setClassificacao(String classificacao) {
-		this.classificacao = classificacao;
-	}
-
-	public String getDimensaoinstitucional() {
-		return dimensaoinstitucional;
-	}
-
-	public void setDimensaoinstitucional(String dimensaoinstitucional) {
-		this.dimensaoinstitucional = dimensaoinstitucional;
-	}
-
 	public String getProposta() {
 		return proposta;
 	}
@@ -181,20 +138,13 @@ public class Projeto implements Serializable, Persistable<Long> {
 		this.resultados = resultados;
 	}
 
-	public String getCronograma() {
-		return cronograma;
+
+	public List<PublicoAlvo> getPublicoalvo() {
+		return publicoalvo;
 	}
 
-	public void setCronograma(String cronograma) {
-		this.cronograma = cronograma;
-	}
-
-	public String getPublicalvo() {
-		return publicalvo;
-	}
-
-	public void setPublicalvo(String publicalvo) {
-		this.publicalvo = publicalvo;
+	public void setPublicoalvo(List<PublicoAlvo> publicoalvo) {
+		this.publicoalvo = publicoalvo;
 	}
 
 	public String getAvaliacao() {
@@ -221,14 +171,35 @@ public class Projeto implements Serializable, Persistable<Long> {
 	public void setCronogramas(List<Cronograma> cronogramas) {
 		this.cronogramas = cronogramas;
 	}
+	
+
+	public List<Recurso> getRecursos() {
+		return recursos;
+	}
+
+	public void setRecursos(List<Recurso> recursos) {
+		this.recursos = recursos;
+	}
+
+	public List<Participante> getParticipantes() {
+		return participantes;
+	}
+
+	public void setParticipantes(List<Participante> participantes) {
+		this.participantes = participantes;
+	}
+	
+
+	public List<PublicoAtendido> getPublicoatendido() {
+		return publicoatendido;
+	}
+
+	public void setPublicoatendido(List<PublicoAtendido> publicoatendido) {
+		this.publicoatendido = publicoatendido;
+	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
-	}
-
-	@Override
-	public Long getId() {
-		return idprojeto;
 	}
 
 	@Override
