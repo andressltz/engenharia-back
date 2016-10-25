@@ -18,9 +18,9 @@ public class Recurso extends BaseModel {
 	
 	@JoinColumn
 	private Projeto projeto;
-	
 	private String txdescricao;
-	
+	private Integer quantidade;
+
 	public Long getIdrecurso() {
 		return idrecurso;
 	}
@@ -43,6 +43,15 @@ public class Recurso extends BaseModel {
 
 	public void setTxdescricao(String txdescricao) {
 		this.txdescricao = txdescricao;
+	}
+
+	
+	public Integer getQuantidade() {
+		return quantidade;
+	}
+
+	public void setQuantidade(Integer quantidade) {
+		this.quantidade = quantidade;
 	}
 
 	@Override
