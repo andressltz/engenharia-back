@@ -14,8 +14,8 @@ public class ProducaoAcademicaService {
 	@Autowired
 	private ProducaoAcademicaRepository repository;
 	
-	public void save(ProducaoAcademica model){
-		repository.saveAndFlush(model);
+	public ProducaoAcademica save(ProducaoAcademica model){
+		return repository.saveAndFlush(model);
 	}
 	
 	public ProducaoAcademica findById(Long id){

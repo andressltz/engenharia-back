@@ -14,8 +14,8 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository repository;
 	
-	public void save(Usuario model){
-		repository.saveAndFlush(model);
+	public Usuario save(Usuario model){
+		return repository.saveAndFlush(model);
 	}
 	
 	public Usuario findById(Long id){

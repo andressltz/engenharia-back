@@ -14,8 +14,8 @@ public class ClassificacaoProjetoService {
 	@Autowired
 	private ClassificacaoProjetoRepository repository;
 	
-	public void save(ClassificacaoProjeto model){
-		repository.saveAndFlush(model);
+	public ClassificacaoProjeto save(ClassificacaoProjeto model){
+		return repository.saveAndFlush(model);
 	}
 	
 	public ClassificacaoProjeto findById(Long id){

@@ -14,8 +14,8 @@ public class AlunoService {
 	@Autowired
 	private AlunoRepository repository;
 	
-	public void save(Aluno model){
-		repository.saveAndFlush(model);
+	public Aluno save(Aluno model){
+		return repository.saveAndFlush(model);
 	}
 	
 	public Aluno findById(Long id){

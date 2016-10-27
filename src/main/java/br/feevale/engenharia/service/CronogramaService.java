@@ -14,8 +14,8 @@ public class CronogramaService {
 	@Autowired
 	private CronogramaRepository repository;
 	
-	public void save(Cronograma model){
-		repository.saveAndFlush(model);
+	public Cronograma save(Cronograma model){
+		return repository.saveAndFlush(model);
 	}
 	
 	public Cronograma findById(Long id){

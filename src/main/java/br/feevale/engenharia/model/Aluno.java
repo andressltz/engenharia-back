@@ -1,15 +1,13 @@
 package br.feevale.engenharia.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import org.springframework.data.domain.Persistable;
+import br.feevale.engenharia.base.BaseModel;
 
 @Entity
-public class Aluno implements Serializable, Persistable<Long> {
+public class Aluno extends BaseModel {
 	
 	private static final long serialVersionUID = 1L;
 
@@ -39,12 +37,5 @@ public class Aluno implements Serializable, Persistable<Long> {
 	public Long getId() {
 		return idaluno;
 	}
-
-	@Override
-	public boolean isNew() {
-		return null == getId();
-	}
-	
-	
 
 }

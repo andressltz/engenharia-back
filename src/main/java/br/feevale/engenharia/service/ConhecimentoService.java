@@ -14,8 +14,8 @@ public class ConhecimentoService {
 	@Autowired
 	private ConhecimentoRepository repository;
 	
-	public void save(Conhecimento model){
-		repository.saveAndFlush(model);
+	public Conhecimento save(Conhecimento model){
+		return repository.saveAndFlush(model);
 	}
 	
 	public Conhecimento findById(Long id){

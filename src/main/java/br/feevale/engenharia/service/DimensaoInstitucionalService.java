@@ -14,8 +14,8 @@ public class DimensaoInstitucionalService {
 	@Autowired
 	private DimensaoInstitucionalRepository repository;
 	
-	public void save(DimensaoInstitucional model){
-		repository.saveAndFlush(model);
+	public DimensaoInstitucional save(DimensaoInstitucional model){
+		return repository.saveAndFlush(model);
 	}
 	
 	public DimensaoInstitucional findById(Long id){

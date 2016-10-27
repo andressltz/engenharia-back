@@ -14,8 +14,8 @@ public class RecursoService {
 	@Autowired
 	private RecursoRepository repository;
 	
-	public void save(Recurso model){
-		repository.saveAndFlush(model);
+	public Recurso save(Recurso model){
+		return repository.saveAndFlush(model);
 	}
 	
 	public Recurso findById(Long id){

@@ -14,8 +14,8 @@ public class ColaboradorService {
 	@Autowired
 	private ColaboradorRepository repository;
 	
-	public void save(Colaborador model){
-		repository.saveAndFlush(model);
+	public Colaborador save(Colaborador model){
+		return repository.saveAndFlush(model);
 	}
 	
 	public Colaborador findById(Long id){
