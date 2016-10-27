@@ -14,8 +14,8 @@ public class PublicoAtendidoService {
 	@Autowired
 	private PublicoAtendidoRepository repository;
 	
-	public void save(PublicoAtendido model){
-		repository.saveAndFlush(model);
+	public PublicoAtendido save(PublicoAtendido model){
+		return repository.saveAndFlush(model);
 	}
 	
 	public PublicoAtendido findById(Long id){

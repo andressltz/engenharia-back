@@ -1,7 +1,5 @@
 package br.feevale.engenharia.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -29,12 +27,12 @@ public class Projeto extends BaseModel {
 	private String resultados;
 	private String avaliacao;
 	
-	private List<PublicoAlvo> publicoalvo;
+//	private List<PublicoAlvo> publicoalvo;
 	private String justificativacontinuacao;
-	private List<Cronograma> cronogramas;
-	private List<Recurso> recursos;
-	private List<Participante> participantes;
-	private List<PublicoAtendido> publicoatendido;
+//	private List<Cronograma> cronogramas;
+//	private List<Recurso> recursos;
+//	private List<Participante> participantes;
+//	private List<PublicoAtendido> publicoatendido;
 	
 //	private Situacao situacao;
 //	pprivate Classificacao classificacao;
@@ -138,13 +136,13 @@ public class Projeto extends BaseModel {
 	}
 
 
-	public List<PublicoAlvo> getPublicoalvo() {
-		return publicoalvo;
-	}
-
-	public void setPublicoalvo(List<PublicoAlvo> publicoalvo) {
-		this.publicoalvo = publicoalvo;
-	}
+//	public List<PublicoAlvo> getPublicoalvo() {
+//		return publicoalvo;
+//	}
+//
+//	public void setPublicoalvo(List<PublicoAlvo> publicoalvo) {
+//		this.publicoalvo = publicoalvo;
+//	}
 
 	public String getAvaliacao() {
 		return avaliacao;
@@ -163,39 +161,39 @@ public class Projeto extends BaseModel {
 	}
 	
 
-	public List<Cronograma> getCronogramas() {
-		return cronogramas;
-	}
-
-	public void setCronogramas(List<Cronograma> cronogramas) {
-		this.cronogramas = cronogramas;
-	}
+//	public List<Cronograma> getCronogramas() {
+//		return cronogramas;
+//	}
+//
+//	public void setCronogramas(List<Cronograma> cronogramas) {
+//		this.cronogramas = cronogramas;
+//	}
 	
 
-	public List<Recurso> getRecursos() {
-		return recursos;
-	}
-
-	public void setRecursos(List<Recurso> recursos) {
-		this.recursos = recursos;
-	}
-
-	public List<Participante> getParticipantes() {
-		return participantes;
-	}
-
-	public void setParticipantes(List<Participante> participantes) {
-		this.participantes = participantes;
-	}
-	
-
-	public List<PublicoAtendido> getPublicoatendido() {
-		return publicoatendido;
-	}
-
-	public void setPublicoatendido(List<PublicoAtendido> publicoatendido) {
-		this.publicoatendido = publicoatendido;
-	}
+//	public List<Recurso> getRecursos() {
+//		return recursos;
+//	}
+//
+//	public void setRecursos(List<Recurso> recursos) {
+//		this.recursos = recursos;
+//	}
+//
+//	public List<Participante> getParticipantes() {
+//		return participantes;
+//	}
+//
+//	public void setParticipantes(List<Participante> participantes) {
+//		this.participantes = participantes;
+//	}
+//	
+//
+//	public List<PublicoAtendido> getPublicoatendido() {
+//		return publicoatendido;
+//	}
+//
+//	public void setPublicoatendido(List<PublicoAtendido> publicoatendido) {
+//		this.publicoatendido = publicoatendido;
+//	}
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;

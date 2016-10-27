@@ -14,8 +14,8 @@ public class ProjetoService {
 	@Autowired
 	private ProjetoRepository repository;
 	
-	public void save(Projeto model){
-		repository.saveAndFlush(model);
+	public Projeto save(Projeto model){
+		return repository.saveAndFlush(model);
 	}
 	
 	public Projeto findById(Long id){

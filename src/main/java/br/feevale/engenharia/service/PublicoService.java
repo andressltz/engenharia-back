@@ -14,8 +14,8 @@ public class PublicoService {
 	@Autowired
 	private PublicoRepository repository;
 	
-	public void save(Publico model){
-		repository.saveAndFlush(model);
+	public Publico save(Publico model){
+		return repository.saveAndFlush(model);
 	}
 	
 	public Publico findById(Long id){

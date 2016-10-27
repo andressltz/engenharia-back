@@ -14,8 +14,8 @@ public class ParticipanteService {
 	@Autowired
 	private ParticipanteRepository repository;
 	
-	public void save(Participante model){
-		repository.saveAndFlush(model);
+	public Participante save(Participante model){
+		return repository.saveAndFlush(model);
 	}
 	
 	public Participante findById(Long id){

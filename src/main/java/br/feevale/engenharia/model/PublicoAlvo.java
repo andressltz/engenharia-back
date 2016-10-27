@@ -1,17 +1,15 @@
 package br.feevale.engenharia.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 
-import org.springframework.data.domain.Persistable;
+import br.feevale.engenharia.base.BaseModel;
 
 
 @Entity
-public class PublicoAlvo implements Serializable, Persistable<Long> {
+public class PublicoAlvo extends BaseModel {
 
 	private static final long serialVersionUID = 1L;
 
@@ -41,10 +39,6 @@ public class PublicoAlvo implements Serializable, Persistable<Long> {
 		this.projeto = projeto;
 	}
 
-	@Override
-	public boolean isNew() {
-		return idpublicoalvo == null;
-	}
 	
 	public static long getSerialversionuid() {
 		return serialVersionUID;

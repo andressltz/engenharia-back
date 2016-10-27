@@ -14,8 +14,8 @@ public class RecursoHumanoService {
 	@Autowired
 	private RecursoHumanoRepository repository;
 	
-	public void save(RecursoHumano model){
-		repository.saveAndFlush(model);
+	public RecursoHumano save(RecursoHumano model){
+		return repository.saveAndFlush(model);
 	}
 	
 	public RecursoHumano findById(Long id){
