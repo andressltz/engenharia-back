@@ -14,7 +14,7 @@ import br.feevale.engenharia.model.Aluno;
 import br.feevale.engenharia.service.AlunoService;
 
 @RestController
-@RequestMapping(value = "usuario")
+@RequestMapping(value = "hello")
 public class HelloWordRestController {
 	
 	@Autowired

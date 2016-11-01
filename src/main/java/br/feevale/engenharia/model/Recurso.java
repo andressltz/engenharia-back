@@ -1,18 +1,17 @@
 package br.feevale.engenharia.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 
-import org.springframework.data.domain.Persistable;
+import br.feevale.engenharia.base.BaseModel;
 
-@SuppressWarnings("serial")
 @Entity
-public class Recurso implements Serializable, Persistable<Long> {
+public class Recurso extends BaseModel {
 	
+	private static final long serialVersionUID = 1L;
+
 	@Id
 	@GeneratedValue
 	private Long idrecurso;
@@ -23,7 +22,6 @@ public class Recurso implements Serializable, Persistable<Long> {
 	private Integer quantidade;
 	private Double valor;
 
-	
 	public Long getIdrecurso() {
 		return idrecurso;
 	}
@@ -70,11 +68,5 @@ public class Recurso implements Serializable, Persistable<Long> {
 		return idrecurso;
 	}
 
-	@Override
-	public boolean isNew() {
-		return null == getId();
-	}
-	
-	
 
 }

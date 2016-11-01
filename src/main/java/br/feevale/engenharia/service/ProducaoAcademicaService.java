@@ -5,20 +5,20 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.feevale.engenharia.model.Projeto;
-import br.feevale.engenharia.repository.ProjetoRepository;
+import br.feevale.engenharia.model.ProducaoAcademica;
+import br.feevale.engenharia.repository.ProducaoAcademicaRepository;
 
 @Component
-public class ProjetoService {
+public class ProducaoAcademicaService {
 
 	@Autowired
-	private ProjetoRepository repository;
+	private ProducaoAcademicaRepository repository;
 	
-	public Projeto save(Projeto model){
+	public ProducaoAcademica save(ProducaoAcademica model){
 		return repository.saveAndFlush(model);
 	}
 	
-	public Projeto findById(Long id){
+	public ProducaoAcademica findById(Long id){
 		return repository.findOne(id);
 	}
 	
@@ -26,7 +26,7 @@ public class ProjetoService {
 		repository.delete(id);
 	}
 	
-	public List<Projeto> findAll() {
+	public List<ProducaoAcademica> findAll() {
 		return repository.findAll();
 	}
 }
