@@ -1,7 +1,5 @@
 package br.feevale.engenharia.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -34,13 +32,13 @@ public class Projeto extends BaseModel {
 	private String avaliacao;
 	private Funcionario proponente;
 	
-	private List<PublicoAlvo> listpublicoalvo;
-	private List<Cronograma> listcronogramas;
-	private List<Recurso> listrecursos;
-	private List<Participante> listparticipantes;
-	private List<PublicoAtendido> listpublicoatendido;
-	private List<ProducaoAcademica> listproducaoacademica; 
-	private List<Anexo> listanexos;
+//	private List<PublicoAlvo> listpublicoalvo;
+//	private List<Cronograma> listcronogramas;
+//	private List<Recurso> listrecursos;
+//	private List<Participante> listparticipantes;
+//	private List<PublicoAtendido> listpublicoatendido;
+//	private List<ProducaoAcademica> listproducaoacademica; 
+//	private List<Anexo> listanexos;
 
 	
 //	private Situacao situacao;
