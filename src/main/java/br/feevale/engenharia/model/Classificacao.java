@@ -9,31 +9,25 @@ import javax.persistence.JoinColumn;
 
 import org.springframework.data.domain.Persistable;
 
-
 @Entity
-public class PublicoAlvo implements Serializable, Persistable<Long> {
+public class Classificacao implements Serializable, Persistable<Long> {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue
-	private Long idpublicoalvo;
+	private Long idclassificao;
 	
 	@JoinColumn
 	private Projeto projeto;
 	
-//	private List<Descricao> descricoes;
+	private String descricao;
 	
 	
-	@Override
-	public Long getId() {
-		return idpublicoalvo;
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	
-	public void setIdpublicoalvo(Long idpublicoalvo) {
-		this.idpublicoalvo = idpublicoalvo;
-	}
-
 	public Projeto getProjeto() {
 		return projeto;
 	}
@@ -42,14 +36,23 @@ public class PublicoAlvo implements Serializable, Persistable<Long> {
 		this.projeto = projeto;
 	}
 
-	@Override
-	public boolean isNew() {
-		return idpublicoalvo == null;
-	}
 	
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	public String getDescricao() {
+		return descricao;
 	}
 
-	
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	@Override
+	public Long getId() {
+		return idclassificao;
+	}
+
+	@Override
+	public boolean isNew() {
+		return idclassificao == null;
+	}
+
 }

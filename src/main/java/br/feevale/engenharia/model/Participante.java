@@ -1,6 +1,7 @@
 package br.feevale.engenharia.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,9 +21,14 @@ public class Participante implements Serializable, Persistable<Long> {
 	
 	@JoinColumn
 	private Projeto projeto;
+	private Double cargahoraria;
+	
+	private LocalDate datainico;
+	private LocalDate datafim;
+	
+	private Situacao situacao;
 //	private Nome nome;
 //	private Tipo tipo;
-	private Double cargahoraria;
 	
 	
 	@Override
@@ -48,6 +54,22 @@ public class Participante implements Serializable, Persistable<Long> {
 
 	public void setCargahoraria(Double cargahoraria) {
 		this.cargahoraria = cargahoraria;
+	}
+
+	public LocalDate getDatainico() {
+		return datainico;
+	}
+
+	public void setDatainico(LocalDate datainico) {
+		this.datainico = datainico;
+	}
+
+	public LocalDate getDatafim() {
+		return datafim;
+	}
+
+	public void setDatafim(LocalDate datafim) {
+		this.datafim = datafim;
 	}
 
 	@Override
