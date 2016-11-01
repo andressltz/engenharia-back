@@ -10,37 +10,37 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.feevale.engenharia.model.Aluno;
-import br.feevale.engenharia.service.AlunoService;
+import br.feevale.engenharia.model.Colaborador;
+import br.feevale.engenharia.service.ColaboradorService;
 
 @RestController
-@RequestMapping("aluno")
-public class AlunoRestController {
+@RequestMapping("colaborador")
+public class ColaboradorRestController {
 	
 	@Autowired
-	private AlunoService service;
+	private ColaboradorService service;
 
 	@ResponseBody
 	@RequestMapping
-	public List<Aluno> listAll() {
+	public List<Colaborador> listAll() {
 		return service.findAll();
 	}
 	
 	@ResponseBody
 	@RequestMapping(value = "/novo", method = RequestMethod.POST)
-	public Aluno novo(@RequestBody Aluno aluno){
+	public Colaborador novo(@RequestBody Colaborador aluno){
 		return service.save(aluno);
 	}
 	
 	@ResponseBody
 	@RequestMapping(value = "/atualiza", method = RequestMethod.POST)
-	public Aluno atualiza(@RequestBody Aluno aluno){
+	public Colaborador atualiza(@RequestBody Colaborador aluno){
 		return service.save(aluno);
 	}
 	
 	@ResponseBody
-	@RequestMapping(value = "/exclui/{idModel}", method = RequestMethod.GET)
-	public void exclui(@PathVariable("idModel")Long idModel) {
+	@RequestMapping(value = "/exclui/{id}", method = RequestMethod.GET)
+	public void exclui(@PathVariable("id")Long idModel) {
 		service.delete(idModel);
 	}
 	

@@ -10,31 +10,31 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.feevale.engenharia.model.Aluno;
-import br.feevale.engenharia.service.AlunoService;
+import br.feevale.engenharia.model.ClassificacaoProjeto;
+import br.feevale.engenharia.service.ClassificacaoProjetoService;
 
 @RestController
-@RequestMapping("aluno")
-public class AlunoRestController {
+@RequestMapping("classificacao-projeto")
+public class ClassificacaoProjetoRestController {
 	
 	@Autowired
-	private AlunoService service;
+	private ClassificacaoProjetoService service;
 
 	@ResponseBody
 	@RequestMapping
-	public List<Aluno> listAll() {
+	public List<ClassificacaoProjeto> listAll() {
 		return service.findAll();
 	}
 	
 	@ResponseBody
 	@RequestMapping(value = "/novo", method = RequestMethod.POST)
-	public Aluno novo(@RequestBody Aluno aluno){
+	public ClassificacaoProjeto novo(@RequestBody ClassificacaoProjeto aluno){
 		return service.save(aluno);
 	}
 	
 	@ResponseBody
 	@RequestMapping(value = "/atualiza", method = RequestMethod.POST)
-	public Aluno atualiza(@RequestBody Aluno aluno){
+	public ClassificacaoProjeto atualiza(@RequestBody ClassificacaoProjeto aluno){
 		return service.save(aluno);
 	}
 	

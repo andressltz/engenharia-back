@@ -10,31 +10,31 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.feevale.engenharia.model.Aluno;
-import br.feevale.engenharia.service.AlunoService;
+import br.feevale.engenharia.model.Cronograma;
+import br.feevale.engenharia.service.CronogramaService;
 
 @RestController
-@RequestMapping("aluno")
-public class AlunoRestController {
+@RequestMapping("cronograma")
+public class CronogramaRestController {
 	
 	@Autowired
-	private AlunoService service;
+	private CronogramaService service;
 
 	@ResponseBody
 	@RequestMapping
-	public List<Aluno> listAll() {
+	public List<Cronograma> listAll() {
 		return service.findAll();
 	}
 	
 	@ResponseBody
 	@RequestMapping(value = "/novo", method = RequestMethod.POST)
-	public Aluno novo(@RequestBody Aluno aluno){
+	public Cronograma novo(@RequestBody Cronograma aluno){
 		return service.save(aluno);
 	}
 	
 	@ResponseBody
 	@RequestMapping(value = "/atualiza", method = RequestMethod.POST)
-	public Aluno atualiza(@RequestBody Aluno aluno){
+	public Cronograma atualiza(@RequestBody Cronograma aluno){
 		return service.save(aluno);
 	}
 	
