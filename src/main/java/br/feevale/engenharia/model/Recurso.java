@@ -20,6 +20,7 @@ public class Recurso extends BaseModel {
 	private Projeto projeto;
 	private String txdescricao;
 	private Integer quantidade;
+	private Double valor;
 
 	public Long getIdrecurso() {
 		return idrecurso;
@@ -52,6 +53,14 @@ public class Recurso extends BaseModel {
 
 	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
+	}
+	
+	public Double getValor() {
+		return valor;
+	}
+
+	public void setValor(Double valor) {
+		this.valor = valor;
 	}
 
 	@Override

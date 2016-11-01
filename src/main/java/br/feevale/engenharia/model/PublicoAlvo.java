@@ -19,6 +19,7 @@ public class PublicoAlvo extends BaseModel {
 	
 	@JoinColumn
 	private Projeto projeto;
+	
 //	private List<Descricao> descricoes;
 	
 	

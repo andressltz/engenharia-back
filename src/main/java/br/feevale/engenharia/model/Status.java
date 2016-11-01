@@ -1,38 +1,35 @@
 package br.feevale.engenharia.model;
 
-import java.time.LocalDate;
+import java.io.Serializable;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 
-import br.feevale.engenharia.base.BaseModel;
+import org.springframework.data.domain.Persistable;
 
 @Entity
-public class Cronograma extends BaseModel {
+public class Status implements Serializable, Persistable<Long> {
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue
-	private Long idcronograma;
+	private Long idstatus;
 	
 	@JoinColumn
 	private Projeto projeto;
-	
+
 	private String descricao;
-	private LocalDate datainicio;
-	private LocalDate datafim;
-	
 	
 	@Override
 	public Long getId() {
-		return idcronograma;
+		return idstatus;
 	}
 	
-	public void setIdcronograma(Long idcronograma) {
-		this.idcronograma = idcronograma;
+	public void setIdstatus(Long idstatus) {
+		this.idstatus = idstatus;
 	}
 	
 	public Projeto getProjeto() {
@@ -42,6 +39,7 @@ public class Cronograma extends BaseModel {
 	public void setProjeto(Projeto projeto) {
 		this.projeto = projeto;
 	}
+	
 
 	public String getDescricao() {
 		return descricao;
@@ -51,21 +49,9 @@ public class Cronograma extends BaseModel {
 		this.descricao = descricao;
 	}
 
-	public LocalDate getDatainicio() {
-		return datainicio;
+	@Override
+	public boolean isNew() {
+		return idstatus == null;
 	}
-
-	public void setDatainicio(LocalDate datainicio) {
-		this.datainicio = datainicio;
-	}
-
-	public LocalDate getDatafim() {
-		return datafim;
-	}
-
-	public void setDatafim(LocalDate datafim) {
-		this.datafim = datafim;
-	}
-
-	
+ 
 }

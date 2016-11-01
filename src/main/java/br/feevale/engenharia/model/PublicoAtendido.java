@@ -20,7 +20,7 @@ public class PublicoAtendido extends BaseModel {
 	@JoinColumn
 	private Projeto projeto;
 	private Integer quantidade;
-//	private Descricao descricao;
+	private String descricao;
 	
 	
 	@Override
@@ -46,6 +46,15 @@ public class PublicoAtendido extends BaseModel {
 
 	public void setQuantidade(Integer quantidade) {
 		this.quantidade = quantidade;
+	}
+	
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 
 

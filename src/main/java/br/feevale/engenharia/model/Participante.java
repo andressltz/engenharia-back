@@ -1,5 +1,7 @@
 package br.feevale.engenharia.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,9 +20,14 @@ public class Participante extends BaseModel {
 	
 	@JoinColumn
 	private Projeto projeto;
+	private Double cargahoraria;
+	
+	private LocalDate datainico;
+	private LocalDate datafim;
+	
+	private Situacao situacao;
 //	private Nome nome;
 //	private Tipo tipo;
-	private Double cargahoraria;
 	
 	
 	@Override
@@ -48,5 +55,25 @@ public class Participante extends BaseModel {
 		this.cargahoraria = cargahoraria;
 	}
 
+	public LocalDate getDatainico() {
+		return datainico;
+	}
+
+	public void setDatainico(LocalDate datainico) {
+		this.datainico = datainico;
+	}
+
+	public LocalDate getDatafim() {
+		return datafim;
+	}
+
+	public void setDatafim(LocalDate datafim) {
+		this.datafim = datafim;
+	}
+
+	@Override
+	public boolean isNew() {
+		return idparticipante == null;
+	}
 
 }

@@ -1,5 +1,7 @@
 package br.feevale.engenharia.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,23 +18,30 @@ public class Projeto extends BaseModel {
 	private Long idprojeto;
 	private String nome;
 	private String titulo;
-	private String proponente;
+	private Status status;
 	private String justificativa;
 	private String objetivosgerais;
 	private String objetivosespecificos;
+	private String propostaarticulacao;
+	private String resultadoesperado;
+	private String listjustificativacontinuacao;
 	private String inicio;
 	private String termino;
 	private String identificador;
+	private Classificacao classificacao; 
 	private String proposta;
 	private String resultados;
 	private String avaliacao;
+	private Funcionario proponente;
 	
-//	private List<PublicoAlvo> publicoalvo;
-	private String justificativacontinuacao;
-//	private List<Cronograma> cronogramas;
-//	private List<Recurso> recursos;
-//	private List<Participante> participantes;
-//	private List<PublicoAtendido> publicoatendido;
+	private List<PublicoAlvo> listpublicoalvo;
+	private List<Cronograma> listcronogramas;
+	private List<Recurso> listrecursos;
+	private List<Participante> listparticipantes;
+	private List<PublicoAtendido> listpublicoatendido;
+	private List<ProducaoAcademica> listproducaoacademica; 
+	private List<Anexo> listanexos;
+
 	
 //	private Situacao situacao;
 //	pprivate Classificacao classificacao;
@@ -61,14 +70,6 @@ public class Projeto extends BaseModel {
 
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
-	}
-
-	public String getProponente() {
-		return proponente;
-	}
-
-	public void setProponente(String proponente) {
-		this.proponente = proponente;
 	}
 
 	public String getJustificativa() {
@@ -152,15 +153,6 @@ public class Projeto extends BaseModel {
 		this.avaliacao = avaliacao;
 	}
 
-	public String getJustificativacontinuacao() {
-		return justificativacontinuacao;
-	}
-
-	public void setJustificativacontinuacao(String justificativacontinuacao) {
-		this.justificativacontinuacao = justificativacontinuacao;
-	}
-	
-
 //	public List<Cronograma> getCronogramas() {
 //		return cronogramas;
 //	}
@@ -194,10 +186,5 @@ public class Projeto extends BaseModel {
 //	public void setPublicoatendido(List<PublicoAtendido> publicoatendido) {
 //		this.publicoatendido = publicoatendido;
 //	}
-
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
 
 }
