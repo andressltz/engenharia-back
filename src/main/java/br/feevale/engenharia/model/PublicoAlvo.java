@@ -19,9 +19,9 @@ public class PublicoAlvo extends BaseModel {
 	
 	@JoinColumn
 	private Projeto projeto;
-	
+
+//	@OneToMany
 //	private List<Descricao> descricoes;
-	
 	
 	@Override
 	public Long getId() {

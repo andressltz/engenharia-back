@@ -1,8 +1,11 @@
 package br.feevale.engenharia.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import br.feevale.engenharia.base.BaseModel;
 
@@ -32,18 +35,30 @@ public class Projeto extends BaseModel {
 	private String avaliacao;
 	private Funcionario proponente;
 	
-//	private List<PublicoAlvo> listpublicoalvo;
-//	private List<Cronograma> listcronogramas;
-//	private List<Recurso> listrecursos;
-//	private List<Participante> listparticipantes;
-//	private List<PublicoAtendido> listpublicoatendido;
-//	private List<ProducaoAcademica> listproducaoacademica; 
-//	private List<Anexo> listanexos;
-
+	@OneToMany
+	private List<PublicoAlvo> listpublicoalvo;
 	
-//	private Situacao situacao;
-//	pprivate Classificacao classificacao;
-//	private DimensaoInstitucional dimensaoInstitucional;
+	@OneToMany
+	private List<Cronograma> listcronogramas;
+	
+	@OneToMany
+	private List<Recurso> listrecursos;
+
+	@OneToMany
+	private List<Participante> listparticipantes;
+
+	@OneToMany
+	private List<PublicoAtendido> listpublicoatendido;
+
+	@OneToMany
+	private List<ProducaoAcademica> listproducaoacademica; 
+
+	@OneToMany
+	private List<Anexo> listanexos;
+	
+	private Situacao situacao;
+	
+	private DimensaoInstitucional dimensaoInstitucional;
 	
 	@Override
 	public Long getId() {
@@ -134,15 +149,6 @@ public class Projeto extends BaseModel {
 		this.resultados = resultados;
 	}
 
-
-//	public List<PublicoAlvo> getPublicoalvo() {
-//		return publicoalvo;
-//	}
-//
-//	public void setPublicoalvo(List<PublicoAlvo> publicoalvo) {
-//		this.publicoalvo = publicoalvo;
-//	}
-
 	public String getAvaliacao() {
 		return avaliacao;
 	}
@@ -150,39 +156,5 @@ public class Projeto extends BaseModel {
 	public void setAvaliacao(String avaliacao) {
 		this.avaliacao = avaliacao;
 	}
-
-//	public List<Cronograma> getCronogramas() {
-//		return cronogramas;
-//	}
-//
-//	public void setCronogramas(List<Cronograma> cronogramas) {
-//		this.cronogramas = cronogramas;
-//	}
-	
-
-//	public List<Recurso> getRecursos() {
-//		return recursos;
-//	}
-//
-//	public void setRecursos(List<Recurso> recursos) {
-//		this.recursos = recursos;
-//	}
-//
-//	public List<Participante> getParticipantes() {
-//		return participantes;
-//	}
-//
-//	public void setParticipantes(List<Participante> participantes) {
-//		this.participantes = participantes;
-//	}
-//	
-//
-//	public List<PublicoAtendido> getPublicoatendido() {
-//		return publicoatendido;
-//	}
-//
-//	public void setPublicoatendido(List<PublicoAtendido> publicoatendido) {
-//		this.publicoatendido = publicoatendido;
-//	}
 
 }

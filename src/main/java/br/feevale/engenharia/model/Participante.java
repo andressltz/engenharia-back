@@ -71,9 +71,4 @@ public class Participante extends BaseModel {
 		this.datafim = datafim;
 	}
 
-	@Override
-	public boolean isNew() {
-		return idparticipante == null;
-	}
-
 }

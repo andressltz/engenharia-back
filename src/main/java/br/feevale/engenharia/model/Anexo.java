@@ -1,16 +1,14 @@
 package br.feevale.engenharia.model;
 
-import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 
-import org.springframework.data.domain.Persistable;
+import br.feevale.engenharia.base.BaseModel;
 
 @Entity
-public class Anexo implements Serializable, Persistable<Long> {
+public class Anexo extends BaseModel {
 
 	private static final long serialVersionUID = 1L;
 	
@@ -23,8 +21,6 @@ public class Anexo implements Serializable, Persistable<Long> {
 	
 	private String nome;
 	private byte[] file;
-	
-	
 	
 	public Projeto getProjeto() {
 		return projeto;
@@ -63,9 +59,4 @@ public class Anexo implements Serializable, Persistable<Long> {
 		this.idanexo = idanexo;
 	}
 	
-	@Override
-	public boolean isNew() {
-		return idanexo == null;
-	}
-
 }

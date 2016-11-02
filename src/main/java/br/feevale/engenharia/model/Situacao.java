@@ -1,21 +1,17 @@
 package br.feevale.engenharia.model;
 
-import java.io.Serializable;
-
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import org.springframework.data.domain.Persistable;
+import br.feevale.engenharia.base.BaseModel;
 
-public class Situacao implements Serializable, Persistable<Long> {
+public class Situacao extends BaseModel {
 
 	private static final long serialVersionUID = 1L;
-
 	
 	@Id
 	@GeneratedValue
 	private Long idsituacao;
-	
 	
 	@Override
 	public Long getId() {
@@ -24,11 +20,6 @@ public class Situacao implements Serializable, Persistable<Long> {
 	
 	public void setIdsituacao(Long idsituacao) {
 		this.idsituacao = idsituacao;
-	}
-
-	@Override
-	public boolean isNew() {
-		return idsituacao == null;
 	}
 
 }
