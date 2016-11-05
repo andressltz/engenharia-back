@@ -12,5 +12,3 @@ Executar com o comando ``mvn spring-boot:run``
 ``http://localhost:8080/aluno/novo`` -> post  
 ``http://localhost:8080/aluno/atualiza`` -> post  
 ``http://localhost:8080/aluno/exclui/123`` -> remove o aluno com o id mencionado    
-
-
