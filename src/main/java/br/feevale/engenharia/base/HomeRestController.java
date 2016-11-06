@@ -11,7 +11,7 @@ public class HomeRestController {
 	@ResponseBody
 	@RequestMapping
 	public String home() {
-		return "home";
+		return "engenharia-back";
 	}
 	
 }
