@@ -19,6 +19,12 @@ public class ClassificacaoProjetoRestController {
 	
 	@Autowired
 	private ClassificacaoProjetoService service;
+	
+	@ResponseBody
+	@RequestMapping(value = "/{idModel}", method = RequestMethod.GET)
+	public ClassificacaoProjeto findById(@PathVariable("idModel")Long idModel) {
+		return service.findById(idModel);
+	}
 
 	@ResponseBody
 	@RequestMapping
