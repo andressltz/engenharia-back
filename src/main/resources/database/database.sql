@@ -58,3 +58,9 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `email` varchar(32),
   PRIMARY KEY (`idusuario`)
 );
+
+CREATE TABLE IF NOT EXISTS `classificacaoprojeto` (
+  `idclassificacaoprojeto` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(32),
+  PRIMARY KEY (`idclassificacaoprojeto`)
+);

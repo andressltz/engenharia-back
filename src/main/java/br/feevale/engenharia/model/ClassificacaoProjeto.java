@@ -3,10 +3,12 @@ package br.feevale.engenharia.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import br.feevale.engenharia.base.BaseModel;
 
 @Entity
+@Table(name="classificacaoprojeto")
 public class ClassificacaoProjeto extends BaseModel {
 	
 	private static final long serialVersionUID = 1L;
