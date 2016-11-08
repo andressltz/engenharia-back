@@ -1,4 +1,6 @@
-![travis-CI](https://travis-ci.org/andressltz/engenharia-back.svg?branch=master)
+[![Build Status](https://travis-ci.org/andressltz/engenharia-back.svg?branch=master)](https://travis-ci.org/andressltz/engenharia-back)
+
+
 # engenharia-back
 Backend do app de Engenharia de Software II
 
