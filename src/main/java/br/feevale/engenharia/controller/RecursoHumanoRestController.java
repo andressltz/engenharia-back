@@ -16,32 +16,38 @@ import br.feevale.engenharia.service.RecursoHumanoService;
 @RestController
 @RequestMapping("recurso-humano")
 public class RecursoHumanoRestController {
-	
-	@Autowired
-	private RecursoHumanoService service;
 
-	@ResponseBody
-	@RequestMapping
-	public List<RecursoHumano> listAll() {
-		return service.findAll();
-	}
-	
-	@ResponseBody
-	@RequestMapping(value = "/novo", method = RequestMethod.POST)
-	public RecursoHumano novo(@RequestBody RecursoHumano aluno){
-		return service.save(aluno);
-	}
-	
-	@ResponseBody
-	@RequestMapping(value = "/atualiza", method = RequestMethod.POST)
-	public RecursoHumano atualiza(@RequestBody RecursoHumano aluno){
-		return service.save(aluno);
-	}
-	
-	@ResponseBody
-	@RequestMapping(value = "/exclui/{idModel}", method = RequestMethod.GET)
-	public void exclui(@PathVariable("idModel")Long idModel) {
-		service.delete(idModel);
-	}
-	
+    @Autowired
+    private RecursoHumanoService service;
+
+    @ResponseBody
+    @RequestMapping(value = "/{idModel}", method = RequestMethod.GET)
+    public RecursoHumano findById(@PathVariable("idModel") Long idModel) {
+        return service.findById(idModel);
+    }
+
+    @ResponseBody
+    @RequestMapping
+    public List<RecursoHumano> listAll() {
+        return service.findAll();
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/novo", method = RequestMethod.POST)
+    public RecursoHumano novo(@RequestBody RecursoHumano aluno) {
+        return service.save(aluno);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/atualiza", method = RequestMethod.POST)
+    public RecursoHumano atualiza(@RequestBody RecursoHumano aluno) {
+        return service.save(aluno);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/exclui/{idModel}", method = RequestMethod.GET)
+    public void exclui(@PathVariable("idModel") Long idModel) {
+        service.delete(idModel);
+    }
+
 }

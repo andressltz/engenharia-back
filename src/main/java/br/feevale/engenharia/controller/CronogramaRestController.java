@@ -16,32 +16,38 @@ import br.feevale.engenharia.service.CronogramaService;
 @RestController
 @RequestMapping("cronograma")
 public class CronogramaRestController {
-	
-	@Autowired
-	private CronogramaService service;
 
-	@ResponseBody
-	@RequestMapping
-	public List<Cronograma> listAll() {
-		return service.findAll();
-	}
-	
-	@ResponseBody
-	@RequestMapping(value = "/novo", method = RequestMethod.POST)
-	public Cronograma novo(@RequestBody Cronograma aluno){
-		return service.save(aluno);
-	}
-	
-	@ResponseBody
-	@RequestMapping(value = "/atualiza", method = RequestMethod.POST)
-	public Cronograma atualiza(@RequestBody Cronograma aluno){
-		return service.save(aluno);
-	}
-	
-	@ResponseBody
-	@RequestMapping(value = "/exclui/{idModel}", method = RequestMethod.GET)
-	public void exclui(@PathVariable("idModel")Long idModel) {
-		service.delete(idModel);
-	}
-	
+    @Autowired
+    private CronogramaService service;
+
+    @ResponseBody
+    @RequestMapping(value = "/{idModel}", method = RequestMethod.GET)
+    public Cronograma findById(@PathVariable("idModel") Long idModel) {
+        return service.findById(idModel);
+    }
+
+    @ResponseBody
+    @RequestMapping
+    public List<Cronograma> listAll() {
+        return service.findAll();
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/novo", method = RequestMethod.POST)
+    public Cronograma novo(@RequestBody Cronograma aluno) {
+        return service.save(aluno);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/atualiza", method = RequestMethod.POST)
+    public Cronograma atualiza(@RequestBody Cronograma aluno) {
+        return service.save(aluno);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/exclui/{idModel}", method = RequestMethod.GET)
+    public void exclui(@PathVariable("idModel") Long idModel) {
+        service.delete(idModel);
+    }
+
 }

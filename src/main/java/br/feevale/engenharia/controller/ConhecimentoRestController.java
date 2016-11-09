@@ -16,32 +16,38 @@ import br.feevale.engenharia.service.ConhecimentoService;
 @RestController
 @RequestMapping("conhecimento")
 public class ConhecimentoRestController {
-	
-	@Autowired
-	private ConhecimentoService service;
 
-	@ResponseBody
-	@RequestMapping
-	public List<Conhecimento> listAll() {
-		return service.findAll();
-	}
-	
-	@ResponseBody
-	@RequestMapping(value = "/novo", method = RequestMethod.POST)
-	public Conhecimento novo(@RequestBody Conhecimento aluno){
-		return service.save(aluno);
-	}
-	
-	@ResponseBody
-	@RequestMapping(value = "/atualiza", method = RequestMethod.POST)
-	public Conhecimento atualiza(@RequestBody Conhecimento aluno){
-		return service.save(aluno);
-	}
-	
-	@ResponseBody
-	@RequestMapping(value = "/exclui/{idModel}", method = RequestMethod.GET)
-	public void exclui(@PathVariable("idModel")Long idModel) {
-		service.delete(idModel);
-	}
-	
+    @Autowired
+    private ConhecimentoService service;
+
+    @ResponseBody
+    @RequestMapping(value = "/{idModel}", method = RequestMethod.GET)
+    public Conhecimento findById(@PathVariable("idModel") Long idModel) {
+        return service.findById(idModel);
+    }
+
+    @ResponseBody
+    @RequestMapping
+    public List<Conhecimento> listAll() {
+        return service.findAll();
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/novo", method = RequestMethod.POST)
+    public Conhecimento novo(@RequestBody Conhecimento aluno) {
+        return service.save(aluno);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/atualiza", method = RequestMethod.POST)
+    public Conhecimento atualiza(@RequestBody Conhecimento aluno) {
+        return service.save(aluno);
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/exclui/{idModel}", method = RequestMethod.GET)
+    public void exclui(@PathVariable("idModel") Long idModel) {
+        service.delete(idModel);
+    }
+
 }

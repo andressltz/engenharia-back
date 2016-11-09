@@ -20,6 +20,12 @@ public class PublicoRestController {
 	@Autowired
 	private PublicoService service;
 
+       	@ResponseBody
+	@RequestMapping(value = "/{idModel}", method = RequestMethod.GET)
+	public Publico findById(@PathVariable("idModel")Long idModel) {
+		return service.findById(idModel);
+	} 
+        
 	@ResponseBody
 	@RequestMapping
 	public List<Publico> listAll() {
