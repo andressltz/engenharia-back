@@ -3,6 +3,7 @@ package br.feevale.engenharia.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 
 import br.feevale.engenharia.base.BaseModel;
 
@@ -34,8 +35,9 @@ public class Usuario extends BaseModel {
 	private String estado;
 
 	private String estadocivil;
-
-//	private InstitutoAcademico institutoAcademico;
+	
+	@JoinColumn
+	private InstitutoAcademico institutoAcademico;
 
 	private String logradouro;
 
@@ -51,6 +53,7 @@ public class Usuario extends BaseModel {
 
 	private String telefone;
 
+	@JoinColumn
 	private Colaborador tipoVinculo;
 
 	private String usuario;
