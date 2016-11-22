@@ -14,7 +14,7 @@ import br.feevale.engenharia.model.InstitutoAcademico;
 import br.feevale.engenharia.service.InstitutoAcademicoService;
 
 @RestController
-@RequestMapping("usuario")
+@RequestMapping("instituto-academico")
 public class InstitutoAcademicoRestController {
 
     @Autowired
