@@ -3,6 +3,7 @@ package br.feevale.engenharia.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 
 import br.feevale.engenharia.base.BaseModel;
 
@@ -14,6 +15,9 @@ public class DimensaoInstitucional extends BaseModel {
 	@Id
 	@GeneratedValue
 	private Long iddimensaoinstitucional;
+	
+	@JoinColumn
+	private Projeto projeto;
 	
 	private String descricao;
 	
@@ -36,6 +40,14 @@ public class DimensaoInstitucional extends BaseModel {
 
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
+	}
+
+	public Projeto getProjeto() {
+		return projeto;
+	}
+
+	public void setProjeto(Projeto projeto) {
+		this.projeto = projeto;
 	}
 
 }
