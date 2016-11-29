@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.util.NestedServletException;
 
 import br.feevale.engenharia.model.Usuario;
 import br.feevale.engenharia.service.UsuarioService;
@@ -34,14 +35,17 @@ public class UsuarioRestController {
 
     @ResponseBody
     @RequestMapping(value = "/novo", method = RequestMethod.POST)
-    public Usuario novo(@RequestBody Usuario aluno) {
-        return service.save(aluno);
+    public Usuario novo(@RequestBody Usuario usuario) throws Exception {
+    	if (usuario.getSenha().equals(usuario.getValidacaosenha())) {
+    		return service.save(usuario);
+    	}
+    	throw new NestedServletException("As senhas são diferentes");
     }
 
     @ResponseBody
     @RequestMapping(value = "/atualiza", method = RequestMethod.POST)
-    public Usuario atualiza(@RequestBody Usuario aluno) {
-        return service.save(aluno);
+    public Usuario atualiza(@RequestBody Usuario usuario) {
+        return service.save(usuario);
     }
 
     @ResponseBody

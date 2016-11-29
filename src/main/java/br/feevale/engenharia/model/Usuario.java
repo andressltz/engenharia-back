@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Transient;
 
 import br.feevale.engenharia.base.BaseModel;
 
@@ -52,12 +53,14 @@ public class Usuario extends BaseModel {
 	private String sobrenome;
 
 	private String telefone;
-
+	
+	@Transient
+	private String validacaosenha; 
+	
 	@JoinColumn
 	private Colaborador tipoVinculo;
 
 	private String usuario;
-
 
 	@Override
 	public Long getId() {
@@ -224,5 +227,21 @@ public class Usuario extends BaseModel {
 		this.usuario = usuario;
 	}
 
+	public InstitutoAcademico getInstitutoAcademico() {
+		return institutoAcademico;
+	}
+
+	public void setInstitutoAcademico(InstitutoAcademico institutoAcademico) {
+		this.institutoAcademico = institutoAcademico;
+	}
+
+	public String getValidacaosenha() {
+		return validacaosenha;
+	}
+
+	public void setValidacaosenha(String validacaosenha) {
+		this.validacaosenha = validacaosenha;
+	}
+	
 
 }
