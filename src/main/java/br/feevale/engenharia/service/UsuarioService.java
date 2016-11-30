@@ -29,4 +29,18 @@ public class UsuarioService {
 	public List<Usuario> findAll() {
 		return repository.findAll();
 	}
+
+	public Usuario findByUsuarioOrEmail(Usuario usuario) {
+//		return repository.findByUsuarioOrEmail(usuario.getUsuario());
+		return null;
+	}
+
+	public void sendEmailRecuperacaoSenha(Usuario usuarioLocalizado) {
+//		Email.send();
+	}
+
+	public Usuario findByUsuarioOrEmailAndSenha(Usuario usuario) {
+//		return repository.findByUsuarioOrEmailAndSenha(usuario.getUsuario(), usuario.getSenha());
+		return null;
+	}
 }

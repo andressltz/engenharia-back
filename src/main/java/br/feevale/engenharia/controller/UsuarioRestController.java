@@ -53,5 +53,25 @@ public class UsuarioRestController {
     public void exclui(@PathVariable("id") Long idModel) {
         service.delete(idModel);
     }
+    
+    @ResponseBody
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public Usuario logar(@RequestBody Usuario usuario) throws Exception {
+    	Usuario usuarioLogado = service.findByUsuarioOrEmailAndSenha(usuario);
+    	if (usuarioLogado != null){
+    		return usuarioLogado;
+    	}
+    	throw new NestedServletException("Usuário ou senha errado."); 
+    }
+    
+    @ResponseBody
+    @RequestMapping(value = "/recuperar", method = RequestMethod.POST)
+    public void recuperar(@RequestBody Usuario usuario) throws Exception {
+    	Usuario usuarioLocalizado = service.findByUsuarioOrEmail(usuario);
+    	if (usuarioLocalizado != null){
+    		service.sendEmailRecuperacaoSenha(usuarioLocalizado);
+    	}
+    	throw new NestedServletException("Usuário não localizado."); 
+    }
 
 }

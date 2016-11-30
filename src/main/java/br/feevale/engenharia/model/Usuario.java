@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 
 import br.feevale.engenharia.base.BaseModel;
@@ -37,7 +38,8 @@ public class Usuario extends BaseModel {
 
 	private String estadocivil;
 	
-	@JoinColumn
+	@ManyToOne
+	@JoinColumn(name = "idinstitutoacademico")
 	private InstitutoAcademico institutoAcademico;
 
 	private String logradouro;
@@ -57,7 +59,8 @@ public class Usuario extends BaseModel {
 	@Transient
 	private String validacaosenha; 
 	
-	@JoinColumn
+	@ManyToOne
+	@JoinColumn(name = "tipo_vinculo")
 	private Colaborador tipoVinculo;
 
 	private String usuario;
