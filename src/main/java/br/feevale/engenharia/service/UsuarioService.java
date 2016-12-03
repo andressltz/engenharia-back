@@ -31,8 +31,7 @@ public class UsuarioService {
 	}
 
 	public Usuario findByUsuarioOrEmail(Usuario usuario) {
-//		return repository.findByUsuarioOrEmail(usuario.getUsuario());
-		return null;
+		return repository.findByUsuarioOrEmail(usuario.getUsuario());
 	}
 
 	public void sendEmailRecuperacaoSenha(Usuario usuarioLocalizado) {
@@ -40,7 +39,6 @@ public class UsuarioService {
 	}
 
 	public Usuario findByUsuarioOrEmailAndSenha(Usuario usuario) {
-//		return repository.findByUsuarioOrEmailAndSenha(usuario.getUsuario(), usuario.getSenha());
-		return null;
+		return repository.findByUsuarioOrEmailAndSenha(usuario.getUsuario(), usuario.getSenha());
 	}
 }
