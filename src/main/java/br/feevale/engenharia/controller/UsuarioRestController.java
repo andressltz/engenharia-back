@@ -66,12 +66,13 @@ public class UsuarioRestController {
     
     @ResponseBody
     @RequestMapping(value = "/recuperar", method = RequestMethod.POST)
-    public void recuperar(@RequestBody Usuario usuario) throws Exception {
+	public Usuario recuperar(@RequestBody Usuario usuario) throws Exception {
     	Usuario usuarioLocalizado = service.findByUsuarioOrEmail(usuario);
     	if (usuarioLocalizado == null){
     		throw new NestedServletException("Usuário não localizado."); 
     	}
     	service.sendEmailRecuperacaoSenha(usuarioLocalizado);
+		return usuarioLocalizado;
     }
 
 }

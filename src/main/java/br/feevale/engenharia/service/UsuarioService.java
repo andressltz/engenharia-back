@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import br.feevale.engenharia.mail.EmailCompose;
+import br.feevale.engenharia.mail.EmailService;
 import br.feevale.engenharia.model.Usuario;
 import br.feevale.engenharia.repository.UsuarioRepository;
 
@@ -14,6 +16,12 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository repository;
 	
+	@Autowired
+	private EmailService mailService;
+
+	@Autowired
+	private EmailCompose compose;
+
 	public Usuario save(Usuario model){
 		return repository.saveAndFlush(model);
 	}
@@ -34,8 +42,8 @@ public class UsuarioService {
 		return repository.findByUsuarioOrEmail(usuario.getUsuario());
 	}
 
-	public void sendEmailRecuperacaoSenha(Usuario usuarioLocalizado) {
-//		Email.send();
+	public void sendEmailRecuperacaoSenha(Usuario usuario) {
+		mailService.enviaEmail(usuario.getEmail(), "Recuperação de Senha", compose.getRecoverPasswordBody(usuario.getNome(), usuario.getSenha()));
 	}
 
 	public Usuario findByUsuarioOrEmailAndSenha(Usuario usuario) {
